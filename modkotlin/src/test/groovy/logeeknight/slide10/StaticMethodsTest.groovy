@@ -1,8 +1,9 @@
 package logeeknight.slide10
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import spock.lang.Specification
 
-import static org.unitils.reflectionassert.ReflectionAssert.assertReflectionEquals;
+import static org.unitils.reflectionassert.ReflectionAssert.assertReflectionEquals
 
 class StaticMethodsTest extends Specification {
     def "Test static conversion"() {
@@ -19,5 +20,13 @@ class StaticMethodsTest extends Specification {
 
         then:
         assertReflectionEquals(result, new Person("Andrey", "Breslav"))
+    }
+
+    def "Test object mapper"() {
+        when:
+        def result = OBJECT_MAPPER.INSTANCE
+
+        then:
+        result instanceof ObjectMapper
     }
 }
