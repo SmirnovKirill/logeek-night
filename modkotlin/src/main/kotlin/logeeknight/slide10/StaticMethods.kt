@@ -1,4 +1,4 @@
-package logeeknight.slide9
+package logeeknight.slide10
 
 data class Person(
     val name: String,
@@ -11,6 +11,7 @@ data class Person(
         }
     }
 }
+
 
 fun personFrom(string: String): Person {
     return Person(string.split(" ")[0], string.split(" ")[1])

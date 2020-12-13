@@ -1,4 +1,4 @@
-package logeeknight.slide6
+package logeeknight.slide7
 
 fun main() {
     val nullCollection: List<String>? = null
