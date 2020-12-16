@@ -2,7 +2,7 @@ package logeeknight
 
 import kotlin.math.max
 
-data class PagedRequest(
+    data class PagedRequest(
         val filter: Map<String, List<String>> = mapOf(),
         val sort: LinkedHashMap<String, String> = linkedMapOf(),
         val page: Page = Page()

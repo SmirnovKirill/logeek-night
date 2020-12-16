@@ -9,7 +9,10 @@ import java.lang.IllegalArgumentException
         SELL
     }
 
-    data class Order(val id: String, val side: Side, val price: Double, val currency: String)
+    data class Order(val id: String,
+                     val side: Side = Side.BUY,
+                     val price: Double,
+                     val currency: String = "USD")
 
     val orderId = "0"
 
