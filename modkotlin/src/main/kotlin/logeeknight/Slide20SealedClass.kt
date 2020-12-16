@@ -10,19 +10,20 @@ class GetRequest(override val url: String) : HttpRequest() {
     override fun send() { /* Implementation goes here*/ }
 }
 
-class PostRequest(override val url: String) : HttpRequest() {
+class PostRequest<T>(override val url: String, val body: T) : HttpRequest() {
     override fun send() { /* Implementation goes here*/ }
 }
 
 fun main() {
     GetRequest("http://kotlinlang.org").send()
     GetRequest("http://java.com").send()
-    PostRequest("http://openjdk.java.net").send()
+    val requestBody = Any()
+    PostRequest("http://openjdk.java.net", requestBody).send()
 }
 
 fun getRequestName(request: HttpRequest): String {
     return when(request) {
         is GetRequest -> "GET"
-        is PostRequest -> "POST"
+        is PostRequest<*> -> "POST"
     }
 }
