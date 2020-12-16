@@ -1,5 +1,7 @@
 package logeeknight
 
+import java.lang.reflect.Member
+
 data class ConferenceMember(
     val name: String,
     val lastName: String,
@@ -18,7 +20,10 @@ fun printMember(member: ConferenceMember) {
         Role.LISTENER -> "Listener"
     }
 
-    println("Name: $name, lastName: $lastName, role: $role")
+    println ("""
+        Name: $name;
+        lastName: $lastName;
+        role: $role.""")
 }
 
 fun printOdd(members: List<ConferenceMember>) {
