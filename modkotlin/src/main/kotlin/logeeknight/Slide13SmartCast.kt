@@ -1,9 +1,10 @@
 package logeeknight
 
-fun smartCast(obj: Any?): Boolean {
-    if (obj !is String) {
-        return false
+    fun smartCast(obj: Any?): Boolean {
+        if (obj !is String) {
+            return false
+        }
+
+        return obj.startsWith("Kotlin is #1")
     }
 
-    return obj.startsWith("Kotlin is #1")
-}
